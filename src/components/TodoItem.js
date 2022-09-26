@@ -20,8 +20,8 @@ class TodoItem extends React.Component {
   }
 
   componentWillUnmount() {
-    console.log("Cleaning up...")
-  }
+  console.log("Cleaning up...")
+}
 
   render() {
     const completedStyle = {
@@ -44,16 +44,17 @@ class TodoItem extends React.Component {
     return (
       <li className={styles.item}>
         <div onDoubleClick={this.handleEditing} style={viewMode}>
-        <input
-          type="checkbox"
-          className={styles.checkbox}
-          checked={completed}
-          onChange={() => this.props.handleChangeProps(this.props.todo.id)}
-        />
-        <button onClick={() => this.props.deleteTodoProps(this.props.todo.id)}>Delete</button>
-        <span style={completed ? completedStyle : null}>
-          {this.props.todo.title}
-        </span>
+          <input
+            type="checkbox"
+            className={styles.checkbox}
+            checked={completed}
+            onChange={() => this.props.handleChangeProps(this.props.todo.id)}
+          />
+          <button onClick={() => this.props.deleteTodoProps(this.props.todo.id)}>Delete</button>
+          <span style={completed ? completedStyle : null}>
+            {this.props.todo.title}
+          </span>
+        </div>
         <input
           type="text"
           style={editMode}
@@ -64,7 +65,6 @@ class TodoItem extends React.Component {
           }}
           onKeyDown={this.handleUpdatedDone}
         />
-        </div>
       </li>
     );
   }

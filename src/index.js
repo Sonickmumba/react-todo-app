@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import './App.css';
-import TodoContainer from './components/TodoContainer';
+import './functionBased/App.css';
+import TodoContainer from './functionBased/components/TodoContainer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
